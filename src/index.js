@@ -14,7 +14,14 @@ console.log("MONGODB_URI =", process.env.MONGODB_URI);
 console.log("PORT =", process.env.PORT);
 
 connectDB();
-
+.then(() => {
+    app.listen(process.env.PORT || 8000, () => {
+        console.log(`server is running at port : ${process.env.PORT || 8000}`);
+    });
+})
+.catch((err) => {
+    console.log("MONGO db connection failed !!! ", err);
+});
 
 /*
 import express from "express";
