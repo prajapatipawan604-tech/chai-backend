@@ -14,7 +14,7 @@ const uploadOnCloudinary = async (localfilePath) => {
     try{
         if (!localfilePath) return null
         //upload the file on cloudinary
-       const response = await clousinary.uploader.uplpad(localfilePath, {
+       const response = await cloudinary.uploader.upload(localfilePath, {
             resource_type: "auto"
         } )
         // file has been uploaded successfull
@@ -33,10 +33,10 @@ export { uploadOnCloudinary}
 
 
 
-cloudinary.v2.uploader
+/*cloudinary.v2.uploader
 .upload("dog.mp4", {
   resource_type: "video", 
   public_id: "my_dog",
   overwrite: true, 
   notification_url: "https://mysite.example.com/notify_endpoint"})
-.then(result=>console.log(result));
+.then(result=>console.log(result));*/
